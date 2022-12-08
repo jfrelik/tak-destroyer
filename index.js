@@ -24,7 +24,8 @@ function checkForBannedWords(message) {
 }
 
 function onMessage(message) {
-  console.log("hehe");
+  if (message.author.bot || message.author.id === client.user.id) return;
+
   if (checkForBannedWords(message.content)) {
     let newMessage = message.content.replace(/tak|yes/g, "`cursed word`");
 
