@@ -33,7 +33,7 @@ function onMessage(message) {
     );
 
     message.delete();
-    message.channel.send(`${message.author.username} - ${newMessage}`);
+    message.channel.send(`${message.member.nickname} - ${newMessage}`);
   }
 }
 
