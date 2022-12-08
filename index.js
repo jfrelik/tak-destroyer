@@ -27,7 +27,10 @@ function onMessage(message) {
   if (message.author.bot || message.author.id === client.user.id) return;
 
   if (checkForBannedWords(message.content)) {
-    let newMessage = message.content.replace(/tak|yes/g, "`cursed word`");
+    let newMessage = message.content.replace(
+      /\btak\b|\byes\b/gi,
+      "`cursed word`"
+    );
 
     message.delete();
     message.channel.send(newMessage);
