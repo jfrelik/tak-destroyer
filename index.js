@@ -28,7 +28,7 @@ function onMessage(message) {
 
   if (checkForBannedWords(message.content)) {
     let newMessage = message.content.replace(
-      /\btak\b|\byes\b/gi,
+      /\btak\b|\byes\b|\btak(\w+)\b|\byes(\w+)\b/gi,
       "`cursed word`"
     );
 
